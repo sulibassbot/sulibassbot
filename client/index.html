@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SULibAssBot</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html"><img src="./assets/logo2.png" alt="Logo"></a></li>
+        <li><a href="#home" onclick="showPage('home')">Home</a></li>
+        <li><a href="#askgpt" onclick="showPage('askgpt')">Ask ChatGPT</a></li>
+        <li><a href="#asklibapp" onclick="showPage('asklibapp')">Library Assistant</a></li>
+        <li><a href="#about" onclick="showPage('about')">About</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Samara University Library Assistant Bot</h1>
+      <p>Welcome to the Samara University Library Assistant Bot! The bot offer a wide range of resources and services to support your academic pursuits.</p>
+      <img src="./assets/students.png" alt="Students">
+    </header>
+    <hr>
+    <main>
+      <div id="home">
+        <section>
+          <h2>Featured Resources</h2>
+          <div class="resources">
+            <div class="resource">
+              <h3>Book Shelf</h3>
+              <p>The Library Assistant provides an exact location of the specified book for the students.</p>
+            </div>
+            <div class="resource">
+              <h3>Book's Detail</h3>
+              <p>The Library Assistant provides the details of a specified book for the students, like, the author, edition and pages.</p>
+            </div>
+            <div class="resource">
+              <h3>Conversational AI</h3>
+              <p>ChatGPT can engage in conversational interactions with users, using natural language processing techniques to understand user input and generate appropriate responses. You can access it through the Ask ChatGPT page of the bot.</p>
+            </div>
+            <div class="resource">
+              <h3>Text summarization</h3>
+              <p>ChatGPT can summarize long passages of text into shorter, more digestible versions, using techniques such as extractive or abstractive summarization. You can access it through the Ask ChatGPT page of the bot.</p>
+            </div>
+            <div class="resource">
+              <h3>Language translation</h3>
+              <p>ChatGPT can translate text between different languages, using machine translation techniques. You can access it through the Ask ChatGPT page of the bot.</p>
+            </div>
+            <div class="resource">
+              <h3>Question answering</h3>
+              <p>ChatGPT can answer factual questions based on the information available to it, drawing on large knowledge bases and other resources. You can access it through the Ask ChatGPT page of the bot.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="web">
+        <h1>Extra Resources</h1>
+        <p>Here are some websites which students can access for various purposes, like, academic research, digital library, online learning platform, educational videos, online encyclopedia and more.
+            <li><a href="https://scholar.google.com/" target="_blank">Google Scholar</a></li>
+            <li><a href="https://www.jstor.org/" target="_blank">JSTOR</a></li>
+            <li><a href="https://www.coursera.org/" target="_blank">Coursera</a></li>
+            <li><a href="https://ed.ted.com/" target="_blank">TED-Ed</a></li>
+            <li><a href="https://www.britannica.com/" target="_blank">Encyclopedia Britannica</a></li>
+            <li><a href="https://www.sanfoundry.com/" target="_blank">Sanfoundry MCQ</a></li>
+        </p>
+      </div><br>
+      <hr>
+      <div id="askgpt">
+        <h1>Ask ChatGPT</h1>
+        <p id="pCap">In this section, we use the Openai chat api to provide you the basic functionality of <b>GPT-3</b>. To name some of the functions, Language Generation, Text Completion, Language Translation, Question Answering, Conversational AI, Content Summarization, Creative Writing and so on.</p>
+      </div>
+      <div id="app">
+        <div id="chat_container"></div>
+  
+        <form>
+          <textarea name="prompt" rows="1" cols="1" placeholder="Ask SULibAssBot..."></textarea>
+          <button type="submit"><img src="assets/send.svg" alt="send" /></button>
+        </form>
+      </div>
+      <br>
+      <hr>
+      <div id="asklibapp">
+        <h1>Library Assistant</h1>
+        <p id="pCap">In this section, we use the non-ai NLU ( <b>Natural Language Understanding</b> ) algorithm to respond students with the pre-defined responses based on quieries related to the Samara University newly opened academic library. We featured resources like, book shelf, book's detail and more.</p><br>
+        <b>Notes:</b>
+        <p>
+          <ul>
+            <li>Be clear</li>
+            <li>Avoid ambiguous words</li>
+            <li>Remember the scope, which is <b>library specific</b></li>
+            <li>Ask like, " <b>Where are ECE books Located?</b> "</li>
+          </ul>
+        </p>
+      </div>
+      <div class="libapp-container">
+        <div class="libmessage">Hello! How can I assist you today?</div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()" class="libsend">Send</button>
+        <div id="chat-log"></div>
+      </div>
+      <br>
+      <hr>
+      <div id="about">
+        <h1>About Us</h1>        
+        <p>This is a thesis project done by fifth year electrical and computer engineering, computer stream students.</p>
+        <p>Name of the students:
+          <ul>
+            <li>Ezedin Nigussie</li>
+            <li>Bedaso Gemechu</li>
+            <li>Jafer Husen</li>
+            <li>Fanos Debela</li>
+          </ul>
+        </p>
+        <p>Thank you for choosing our bot as your academic assistant. We look forward to serving you.</p>
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="./assets/library.png" alt="library">
+            <img src="./assets/image1.png" alt="Image 1">
+            <img src="./assets/image2.png" alt="Image 2">
+            <img src="./assets/image3.png" alt="Image 3">
+            <!-- Add more images here -->
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Samara University Library Assistant Bot</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    <script src="libbot.js"></script>
+  </body>
+</html>
