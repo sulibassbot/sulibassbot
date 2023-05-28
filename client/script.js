@@ -136,57 +136,57 @@ function showPage(pageId) {
 const responses = [
     {
       input: ['hello', 'hi', 'hey', 'good morning', 'good afternoon'],
-      response: 'Hello! How can I help you?',
+      answer: 'Hello! How can I help you?',
       probability: 0.4
     },
     {
       input: ['help', 'assist', 'assistance'],
-      response: 'Sure, I can help you. What do you need assistance with?',
+      answer: 'Sure, I can help you. What do you need assistance with?',
       probability: 0.3
     },
     {
       input: ["many colleges","many college","in samara","in su"],
-      response: "There are 9 colleges in SU. College of:<br> 1. E&T<br> 2. Business",
+      answer: "There are 9 colleges in SU. College of:<br> 1. E&T<br> 2. Business",
       probability: 0.4
     },
     {
       input: ["many departments","many department","in e&t","in engineering and technology"],
-      response: "There are 5 departments in E&T. Department of:<br> 1. ECE<br> 2. Civil Engineering<br> 3. Mechanical Engineering<br> 4. Chemical Engineering<br> 5. Water Engineering",
+      answer: "There are 5 departments in E&T. Department of:<br> 1. ECE<br> 2. Civil Engineering<br> 3. Mechanical Engineering<br> 4. Chemical Engineering<br> 5. Water Engineering",
       probability: 0.4
     },
     {
       input: ["what are books for ece","list ece resources", "list ece books"],
-      response: "There're a lot of books for ECE:<br> 1. Digital Design - M. Morris Mano<br> 2. Signals and Systems - Alan V. Oppenheim<br> 3. Electric Circuit - James W. Nillson",
+      answer: "There're a lot of books for ECE:<br> 1. Digital Design - M. Morris Mano<br> 2. Signals and Systems - Alan V. Oppenheim<br> 3. Electric Circuit - James W. Nillson",
       probability: 0.4
     },
     {
       input: ["digital design","morris"],
-      response: "The 'Digital Design' book has 3 editions:<br> 1. 2006 - arround 576 pages<br> 2. 2013 - arround 576 pages<br> 3. 2020 - arround 704 pages<br> <b>The book is located on second floor at the left side in shelf three.</b>",
+      answer: "The 'Digital Design' book has 3 editions:<br> 1. 2006 - arround 576 pages<br> 2. 2013 - arround 576 pages<br> 3. 2020 - arround 704 pages<br> <b>The book is located on second floor at the left side in shelf three.</b>",
       probability: 0.4
     },
     {
       input: ["ece books located","find ece","location of ece"],
-      response: "The ece books are located on second floor at the left side in shelf three.",
+      answer: "The ece books are located on second floor at the left side in shelf three.",
       probability: 0.4
     },
     {
       input: ["civil books located","find civil","location of civil"],
-      response: "The civil books are located on third floor at the right side in shelf two.",
+      answer: "The civil books are located on third floor at the right side in shelf two.",
       probability: 0.4
     },
     {
       input: ['thank you', 'thanks'],
-      response: 'You\'re welcome! I\'m here to help.',
+      answer: 'You\'re welcome! I\'m here to help.',
       probability: 0.1
     },
     {
       input: ['goodbye', 'bye', 'see you'],
-      response: 'Goodbye! Have a great day!',
+      answer: 'Goodbye! Have a great day!',
       probability: 0.2
     },
     {
       input: ['default'],
-      response: 'I\'m sorry, I didn\'t understand. Can you please make/rephrase your message to relate to library specific quieries?',
+      answer: 'I\'m sorry, I didn\'t understand. Can you please make/rephrase your message to relate to library specific quieries?',
       probability: 0
     }
   ];
@@ -213,10 +213,10 @@ function getBotResponse(message) {
   let maxProbability = 0;
   let selectedResponse = '';
 
-  for (const response of responses) {
-    const input = response.input;
-    const responseText = response.response;
-    const probability = response.probability;
+  for (const answer of responses) {
+    const input = answer.input;
+    const responseText = answer.answer;
+    const probability = answer.probability;
 
     for (const keyword of input) {
       if (message.includes(keyword) && probability > maxProbability) {
@@ -227,7 +227,7 @@ function getBotResponse(message) {
   }
 
   if (selectedResponse === '') {
-    selectedResponse = responses.find(response => response.input.includes('default')).response;
+    selectedResponse = responses.find(answer => answer.input.includes('default')).answer;
   }
 
   return selectedResponse;
