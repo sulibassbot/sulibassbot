@@ -343,6 +343,11 @@ footer p {
   margin-bottom: 10px;
   font-weight: bold;
   color: indigo;
+  text-align: center;
+}
+
+#user-input {
+  transform: translate(70px, 0px);
 }
 
 .user-message {
@@ -360,6 +365,7 @@ footer p {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transform: translate(70px, 0px);
 }
 
 .carousel {
