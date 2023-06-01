@@ -157,8 +157,11 @@ nav {
   color: #fff;
   padding: 1rem;
   overflow: hidden;
-  position: sticky;
   top: 0;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Adjust the value as needed */
 }
 
 nav ul {
@@ -347,7 +350,9 @@ footer p {
 }
 
 #user-input {
+  position: relative;
   transform: translate(60px, 0px);
+  z-index: 1;
 }
 
 .user-message {
@@ -365,7 +370,9 @@ footer p {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  position: relative;
   transform: translate(60px, 0px);
+  z-index: 1;
 }
 
 .carousel {
@@ -418,4 +425,38 @@ footer p {
 
 .web a:focus {
   outline: 2px solid #ff0000; /* Add a focus outline */
+}
+
+/* Contact Form */
+#subQue {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+#subQue h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#subQue label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#subQue input,
+textarea {
+  color: black;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#subQue button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
 }

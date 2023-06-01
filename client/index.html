@@ -102,6 +102,21 @@
       </div>
       <br>
       <hr>
+      <div id="subQue">
+        <h1>Contact Us Now</h1>
+        <p>If you have any suggestion or any quiery to be included, please send us using the below form.</p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" required></textarea>
+
+        <button onclick="sendEmail()" id="subQueBtn">Send Message</button>        
+      </div>
+      <hr>
       <div id="about">
         <h1>About Us</h1>        
         <p>This is a thesis project done by fifth year electrical and computer engineering, computer stream students.</p>
@@ -276,6 +291,21 @@
         carouselControls.appendChild(nextButton);
         carousel.appendChild(carouselControls);
       });
+
+      // Contact Form
+      function sendEmail() {
+        // Get input values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+      
+        // Prepare email body
+        var subject = 'New Message from ' + name;
+        var body = 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
+      
+        // Open the user's default email client with pre-filled email fields
+        window.location.href = 'mailto:sulibraryassistantbot@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      }
     </script>
   </body>
 </html>
